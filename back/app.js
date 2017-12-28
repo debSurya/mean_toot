@@ -28,6 +28,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(passport.initialize());
 app.use(passport.session());
+
+var initPassport = require('./init-passport');
+initPassport(passport);
+
 app.use('/api', api);
 // app.use('/auth', auth);
 
